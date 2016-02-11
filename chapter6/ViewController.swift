@@ -27,6 +27,14 @@ class ViewController: UIViewController {
         colorLabel.text = "R:\(colorR) G:\(colorG) B:\(colorB)"
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // 遷移先のViewController
+        let nextVc = segue.destinationViewController as! colorViewController
+        nextVc.colorR = colorR
+        nextVc.colorG = colorG
+        nextVc.colorB = colorB
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
